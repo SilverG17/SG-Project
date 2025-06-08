@@ -20,7 +20,7 @@ def move(direction):
     sio.emit('move', {'direction': direction})
 
 def capture_image():
-    response = requests.get('http://localhost:5000/capture')
+    response = requests.get('http://192.1.86:5000/capture')
     if response.status_code == 200:
         with open('captured_image.jpg', 'wb') as f:
             f.write(response.content)
@@ -30,7 +30,7 @@ def capture_image():
 
 if __name__ == "__main__":
     # Connect to the server
-    sio.connect('http://localhost:5000')
+    sio.connect('http://192.1.86:5000')
 
     while True:
         command = input('Enter command (up, down, left, right, capture, exit): ')

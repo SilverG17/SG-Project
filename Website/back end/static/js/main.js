@@ -1,5 +1,5 @@
 // Connect to the Socket.IO server
-var socket = io.connect('http://192.168.1.84:5000');
+var socket = io.connect('http://192.168.1.93:5000');
 var maintainingSpeed = false;
 var speed = 0;
 var speedTimeout;
