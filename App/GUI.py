@@ -1,27 +1,14 @@
-import ttkbootstrap as ttk
+from PyQt6.QtWidgets import QMainWindow
+from PyQt6.QtCore import QSize
 
-DEFAULT_RESOLUTION = "1280x720"
+DEFAULT_RESOLUTION = QSize(1280, 720)
 
-def update_resolution(window, resolution):
-    window.geometry(resolution)
+class Window(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Viettrix Camera App")
+        self.resize(DEFAULT_RESOLUTION)
+        self.showMaximized()  # Equivalent to state('zoomed')
 
 def create_window():
-    window = ttk.Window(themename='cosmo')
-    window.title("Viettrix Camera App")
-    
-    # Set default resolution
-    window.geometry(DEFAULT_RESOLUTION)
-    window.resizable(True, True)
-    
-    # Maximize window by default
-    window.state('zoomed')
-    
-    style()
-
-    return window
-
-def style():
-    # White Background for Buttons
-    style = ttk.Style()
-    style.configure('White.TButton', background='white', foreground='black', bordercolor='white', relief='flat')
-    style.map('White.TButton', background=[('active', 'white')])
+    return Window()

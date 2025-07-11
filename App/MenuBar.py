@@ -1,102 +1,102 @@
-import tkinter as tk
-from tkinter import Menu, StringVar, messagebox, Toplevel
-import ttkbootstrap as ttk
+from PyQt6.QtWidgets import (
+    QMenuBar, QMenu, QDialog, QVBoxLayout, QComboBox, QPushButton, QLabel
+)
+from PyQt6.QtGui import QAction  
+from PyQt6.QtCore import QSize
 import GUI
 
 def Menubar(window):
     """Create and configure the menu bar."""
-    menubar = Menu(window)
-    window.config(menu=menubar)
+    menubar = QMenuBar(window)
+    window.setMenuBar(menubar)
 
-    # Create an Account menu
-    account_menu = Menu(menubar, tearoff=0)
-    account_menu.add_command(label="Account")
-    account_menu.add_command(label="Change Password")
-    menubar.add_cascade(label="Account", menu=account_menu)
+    # Account Menu
+    account_menu = QMenu("Account", window)
+    account_menu.addAction(QAction("Account", window))
+    account_menu.addAction(QAction("Change Password", window))
+    menubar.addMenu(account_menu)
 
-    # Create an Edit menu
-    edit_menu = Menu(menubar, tearoff=0)
-    edit_menu.add_command(label="test")
-    edit_menu.add_command(label="test")
-    edit_menu.add_separator()
-    edit_menu.add_command(label="test")
-    edit_menu.add_command(label="test")
-    edit_menu.add_command(label="test")
-    menubar.add_cascade(label="Edit", menu=edit_menu)
+    # Edit Menu
+    edit_menu = QMenu("Edit", window)
+    edit_menu.addAction(QAction("test", window))
+    edit_menu.addAction(QAction("test", window))
+    edit_menu.addSeparator()
+    edit_menu.addAction(QAction("test", window))
+    edit_menu.addAction(QAction("test", window))
+    edit_menu.addAction(QAction("test", window))
+    menubar.addMenu(edit_menu)
 
-    # Create a Sys menu
-    sys_menu = Menu(menubar, tearoff=0)
-    sys_menu.add_command(label='Resolution', command=lambda: ResolutionWindow(window))
-    
-    # Create a Mode submenu
-    mode_menu = Menu(sys_menu, tearoff=0)
-    mode_menu.add_command(label='Full Screen', command=lambda: set_fullscreen(window))
-    mode_menu.add_command(label='Windowed', command=lambda: set_windowed(window))
-    mode_menu.add_command(label='Borderless', command=lambda: set_borderless(window))
-    sys_menu.add_cascade(label='Mode', menu=mode_menu)
-    
-    sys_menu.add_command(label="Forced Exit", command=lambda: exit())
-    menubar.add_cascade(label="System", menu=sys_menu)
+    # System Menu
+    sys_menu = QMenu("System", window)
+
+    resolution_action = QAction("Resolution", window)
+    resolution_action.triggered.connect(lambda: ResolutionWindow(window))
+    sys_menu.addAction(resolution_action)
+
+    # Mode Submenu
+    mode_menu = QMenu("Mode", window)
+
+    mode_menu.addAction(QAction("Full Screen", window, triggered=lambda: set_fullscreen(window)))
+    mode_menu.addAction(QAction("Windowed", window, triggered=lambda: set_windowed(window)))
+    mode_menu.addAction(QAction("Borderless", window, triggered=lambda: set_borderless(window)))
+
+    sys_menu.addMenu(mode_menu)
+
+    sys_menu.addAction(QAction("Forced Exit", window, triggered=lambda: window.close()))
+    menubar.addMenu(sys_menu)
 
 def ResolutionWindow(parent):
-    """Create a window for selecting resolution."""
-    resolution_window = Toplevel(parent)
-    resolution_window.title("Select Resolution")
-    resolution_window.geometry("250x200")
-    resolution_window.resizable(False, False)
+    """Create a dialog for selecting resolution."""
+    dialog = QDialog(parent)
+    dialog.setWindowTitle("Select Resolution")
+    dialog.setFixedSize(250, 200)
 
-    # Dropdown menu for resolution selection
-    resolutions = ["1920x1080", "1600x900", "1440x900", "1366x768", "1280x720", "1024x768", "800x600", "640x480"]
-    selected_resolution = StringVar(value=GUI.DEFAULT_RESOLUTION)
-    
-    resolution_menu = ttk.Combobox(resolution_window, textvariable=selected_resolution, values=resolutions)
-    resolution_menu.grid(row=1, column=1, padx=10, pady=10)
-    
+    layout = QVBoxLayout()
+
+    resolutions = [
+        "1920x1080", "1600x900", "1440x900", "1366x768",
+        "1280x720", "1024x768", "800x600", "640x480"
+    ]
+
+    label = QLabel("Choose Resolution:")
+    layout.addWidget(label)
+
+    resolution_menu = QComboBox()
+    resolution_menu.addItems(resolutions)
+    resolution_menu.setCurrentText(GUI.DEFAULT_RESOLUTION)
+    layout.addWidget(resolution_menu)
+
     def validate_resolution():
-        """Validate and apply the selected resolution."""
-        res = selected_resolution.get()
+        res = resolution_menu.currentText()
         if 'x' in res:
             width, height = res.split('x')
             if width.isdigit() and height.isdigit():
                 GUI.update_resolution(parent, res)
-                resolution_window.destroy()
+                dialog.accept()
                 return
-        messagebox.showerror("Invalid Resolution", "The selected resolution is not valid. Please enter a valid resolution (e.g., 1920x1080).")
-        selected_resolution.set(GUI.DEFAULT_RESOLUTION)
-    
-    def on_enter(event):
-        validate_resolution()
-    
-    def close_resolution():
-        resolution_window.destroy()
-    
-    resolution_menu.bind("<Return>", on_enter)
-    
-    # Add Apply button
-    apply_button = ttk.Button(resolution_window, text="Apply", width=6, command=validate_resolution)
-    apply_button.grid(row=1, column=5, padx=10, pady=10)
+        resolution_menu.setCurrentText(GUI.DEFAULT_RESOLUTION)
 
-    # Add Close button
-    close_button = ttk.Button(resolution_window, text="Exit", width=6, command=close_resolution)
-    close_button.grid(row=2, column=5, padx=10, pady=5)
+    apply_button = QPushButton("Apply")
+    apply_button.clicked.connect(validate_resolution)
+    layout.addWidget(apply_button)
+
+    close_button = QPushButton("Exit")
+    close_button.clicked.connect(dialog.reject)
+    layout.addWidget(close_button)
+
+    dialog.setLayout(layout)
+    dialog.exec()
 
 def set_fullscreen(window):
     """Set the window to full screen mode."""
-    window.overrideredirect(False)  # Ensure decorations are restored
-    window.attributes('-fullscreen', True)
+    window.showFullScreen()
 
 def set_windowed(window):
     """Set the window to windowed mode."""
-    window.attributes('-fullscreen', False)
-    window.overrideredirect(False)  # Ensure decorations are restored
-    current_width = window.winfo_width()
-    current_height = window.winfo_height()
-    window.geometry(f"{current_width}x{current_height}")
+    window.showNormal()
+    window.resize(QSize(1280, 720))  # Or use current size if needed
 
 def set_borderless(window):
     """Set the window to borderless mode."""
-    window.attributes('-fullscreen', False)
-    window.overrideredirect(True)
-    current_width = window.winfo_width()
-    current_height = window.winfo_height()
-    window.geometry(f"{current_width}x{current_height}")
+    window.setWindowFlags(window.windowFlags() | window.FramelessWindowHint)
+    window.show()

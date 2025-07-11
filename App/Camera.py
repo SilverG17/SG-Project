@@ -1,208 +1,194 @@
+from PyQt6.QtWidgets import (
+    QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QFileDialog, QMessageBox, QWidget, QGridLayout
+)
+from PyQt6.QtGui import QPixmap, QImage
+from PyQt6.QtCore import Qt, QTimer
 import cv2
-import GUI
-import Viettrix
-import tkinter as tk
-import ttkbootstrap as ttk
-
-from tkinter import *
-from pyfirmata2 import Arduino, util
-from PIL import Image, ImageTk
+from PIL import Image
 from datetime import datetime
-from tkinter import messagebox, filedialog
+from pyfirmata2 import Arduino
+import Viettrix
 
-# Defining CreateWidgets() function to create necessary tkinter widgets
-def createwidgets(window):
-    # Creating object of class VideoCapture with webcam index
+destPath = ''
+imagePath = ''
+led_pin = None
+board = None
+
+class CameraWidget(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.cap = cv2.VideoCapture(0)
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.update_frame)
+        self.timer.start(30)
+        self.initUI()
+
+    def initUI(self):
+        layout = QGridLayout(self)
+
+        self.cameraLabel = QLabel("Camera Feed")
+        self.cameraLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(self.cameraLabel, 0, 0, 1, 2)
+
+        capture_btn = QPushButton("Capture")
+        capture_btn.clicked.connect(self.capture_image)
+        layout.addWidget(capture_btn, 1, 0)
+
+        back_btn = QPushButton("Back")
+        back_btn.clicked.connect(self.go_back)
+        layout.addWidget(back_btn, 1, 1)
+
+    def update_frame(self):
+        ret, frame = self.cap.read()
+        if ret:
+            frame = cv2.flip(frame, 1)
+            rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            h, w, ch = rgb.shape
+            bytes_per_line = ch * w
+            qt_image = QImage(rgb.data, w, h, bytes_per_line, QImage.Format.Format_RGB888)
+            pixmap = QPixmap.fromImage(qt_image)
+            self.cameraLabel.setPixmap(pixmap.scaled(640, 480, Qt.AspectRatioMode.KeepAspectRatio))
+
+    def capture_image(self):
+        filename, _ = QFileDialog.getSaveFileName(self, "Save Image", "", "JPEG Files (*.jpg)")
+        if filename:
+            ret, frame = self.cap.read()
+            if ret:
+                cv2.imwrite(filename, frame)
+                QMessageBox.information(self, "Saved", f"Image saved to {filename}")
+
+    def go_back(self):
+        self.timer.stop()
+        self.cap.release()
+        self.parent().setCentralWidget(Viettrix.HomeWidget(self.parent()))
+
+def createwidgets(window: QWidget):
+    # Setup layout
+    layout = QGridLayout()
+    window.setLayout(layout)
+
+    # Webcam feed label
+    window.cameraLabel = QLabel("WEBCAM FEED")
+    window.cameraLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+    layout.addWidget(window.cameraLabel, 0, 0, 1, 2)
+
+    # Image preview label
+    window.imageLabel = QLabel("IMAGE PREVIEW")
+    window.imageLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+    layout.addWidget(window.imageLabel, 0, 2, 1, 2)
+
+    # Buttons
+    browse_btn = QPushButton("Browse")
+    browse_btn.clicked.connect(lambda: imageBrowse(window))
+    layout.addWidget(browse_btn, 1, 3)
+
+    capture_btn = QPushButton("Capture")
+    capture_btn.clicked.connect(lambda: Capture(window))
+    layout.addWidget(capture_btn, 2, 0)
+
+    stop_btn = QPushButton("Stop Camera")
+    stop_btn.clicked.connect(lambda: StopCAM(window))
+    layout.addWidget(stop_btn, 2, 1)
+
+    back_btn = QPushButton("Back")
+    back_btn.clicked.connect(lambda: BackToHome(window))
+    layout.addWidget(back_btn, 2, 3)
+
+    # Arrow buttons
+    up_btn = QPushButton("UP")
+    up_btn.clicked.connect(led_on)
+    layout.addWidget(up_btn, 3, 2)
+
+    down_btn = QPushButton("DOWN")
+    down_btn.clicked.connect(led_off)
+    layout.addWidget(down_btn, 4, 2)
+
+    left_btn = QPushButton("LEFT")
+    left_btn.clicked.connect(led_on)
+    layout.addWidget(left_btn, 4, 1)
+
+    right_btn = QPushButton("RIGHT")
+    right_btn.clicked.connect(led_off)
+    layout.addWidget(right_btn, 4, 3)
+
+    # Start camera
     window.cap = cv2.VideoCapture(0)
-    
-    if not window.cap.isOpened():
-        print("Error: Could not open video device")
-        return
+    window.timer = QTimer()
+    window.timer.timeout.connect(lambda: ShowFeed(window))
+    window.timer.start(30)
 
-    # Configure the grid to expand
-    window.grid_columnconfigure(0, weight=1)
-    window.grid_columnconfigure(1, weight=1)
-    window.grid_columnconfigure(2, weight=1)
-    window.grid_columnconfigure(3, weight=1)
-    window.grid_columnconfigure(4, weight=1)
-    window.grid_columnconfigure(5, weight=1)
-    window.grid_rowconfigure(0, weight=1)
-    window.grid_rowconfigure(1, weight=1)
-    window.grid_rowconfigure(2, weight=1)
-    window.grid_rowconfigure(3, weight=1)
-    window.grid_rowconfigure(4, weight=1)
-    window.grid_rowconfigure(5, weight=1)
-    window.grid_rowconfigure(6, weight=1)
-
-    # Label Field
-    window.feedlabel = ttk.Label(master=window, text="WEBCAM FEED", font=('Comic Sans MS', 20))
-    window.feedlabel.grid(row=1, column=1, padx=10, pady=10, columnspan=2, sticky="nsew")
-    
-    window.previewlabel = ttk.Label(master=window, text="IMAGE PREVIEW", font=('Comic Sans MS', 20))
-    window.previewlabel.grid(row=1, column=4, padx=10, pady=10, columnspan=2, sticky="nsew")
-
-    window.cameraLabel = ttk.Label(master=window, borderwidth=3, relief="groove")
-    window.cameraLabel.grid(row=2, column=1, padx=10, pady=10, columnspan=2, sticky="nsew")
-
-    window.imageLabel = ttk.Label(master=window, borderwidth=3, relief="groove")
-    window.imageLabel.grid(row=2, column=4, padx=10, pady=10, columnspan=2, sticky="nsew")
-
-    # Input Field
-    window.input_frame = ttk.Frame(master=window)
-    window.input_frame.grid(row=3, column=5, padx=10, pady=10, sticky="nsew")
-
-    window.openImageButton = ttk.Button(master=window.input_frame, width=10, text="BROWSE", command=lambda: imageBrowse(window))
-    window.openImageButton.grid(row=3, column=5, padx=10, pady=10, sticky="nsew")
-
-    # Create arrow buttons
-    back_button = ttk.Button(window, text="Back", command=lambda: BackToHome(window))
-    back_button.grid(row=0, column=0, padx=20, pady=5, sticky="nsew")
-
-    window.UpButton = Button(window, width=10, text="UP", command=led_on)
-    window.UpButton.grid(row=5, column=6, padx=10, pady=10, sticky="nsew")
-
-    window.DownButton = Button(window, width=10, text="DOWN", command=led_off)
-    window.DownButton.grid(row=6, column=6, padx=10, pady=10, sticky="nsew")
-
-    window.LeftButton = Button(window, width=10, text="LEFT", command=led_on)
-    window.LeftButton.grid(row=6, column=5, padx=10, pady=10, sticky="nsew")
-
-    window.RightButton = Button(window, width=10, text="RIGHT", command=led_off)
-    window.RightButton.grid(row=6, column=7, padx=10, pady=10, sticky="nsew")
-
-    window.captureBTN = Button(window, text="CAPTURE", command=lambda: Capture(window), font='Calibri', width=20)
-    window.captureBTN.grid(row=4, column=1, padx=10, pady=10, sticky="nsew")
-
-    window.CAMBTN = Button(window, text="STOP CAMERA", command=lambda: StopCAM(window), font=('Comic Sans MS', 15), width=13)
-    window.CAMBTN.grid(row=4, column=2, sticky="nsew")
-
-    # Initialize the image attribute
-    window.imgtk = None
-
-    # Calling ShowFeed() function
-    ShowFeed(window)
-
-
-
-# Defining ShowFeed() function to display webcam feed in the cameraLabel;
 def ShowFeed(window):
-    # Capturing frame by frame
     ret, frame = window.cap.read()
-
     if ret:
-        # Flipping the frame vertically
         frame = cv2.flip(frame, 1)
-
-        # Displaying date and time on the feed
-        cv2.putText(frame, datetime.now().strftime('%d/%m/%Y %H:%M:%S'), (20, 30), cv2.FONT_HERSHEY_DUPLEX, 0.5, (0, 255, 255))
-
-        # Changing the frame color from BGR to RGB
-        cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
-
-        # Creating an image memory from the above frame exporting array interface
-        videoImg = Image.fromarray(cv2image)
-
-        # Creating object of PhotoImage() class to display the frame
-        window.imgtk = ImageTk.PhotoImage(image=videoImg)
-
-        # Configuring the label to display the frame
-        window.cameraLabel.configure(image=window.imgtk)
-
-        # Calling the function after 10 milliseconds
-        window.cameraLabel.after(10, lambda: ShowFeed(window))
-
-    else:
-        # Configuring the label to display the frame
-        window.cameraLabel.configure(image='')
-
-
-def destBrowse():
-    global destPath
-    destDirectory = filedialog.askdirectory(initialdir="YOUR DIRECTORY PATH")
-    destPath.set(destDirectory)
+        cv2.putText(frame, datetime.now().strftime('%d/%m/%Y %H:%M:%S'),
+                    (20, 30), cv2.FONT_HERSHEY_DUPLEX, 0.5, (0, 255, 255))
+        rgb_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        h, w, ch = rgb_image.shape
+        bytes_per_line = ch * w
+        qt_image = QImage(rgb_image.data, w, h, bytes_per_line, QImage.Format.Format_RGB888)
+        pixmap = QPixmap.fromImage(qt_image)
+        window.cameraLabel.setPixmap(pixmap.scaled(640, 480, Qt.AspectRatioMode.KeepAspectRatio))
 
 def imageBrowse(window):
     global imagePath
-    openDirectory = filedialog.askopenfilename(initialdir="YOUR DIRECTORY PATH")
-    imagePath.set(openDirectory)
-
-    imageView = Image.open(openDirectory)
-    imageResize = imageView.resize((640, 480), Image.ANTIALIAS)
-    imageDisplay = ImageTk.PhotoImage(imageResize)
-
-    window.imageLabel.config(image=imageDisplay)
-    window.imageLabel.photo = imageDisplay
+    file, _ = QFileDialog.getOpenFileName(window, "Select Image")
+    if file:
+        imagePath = file
+        image = Image.open(file).resize((640, 480))
+        qt_image = QPixmap(file)
+        window.imageLabel.setPixmap(qt_image.scaled(640, 480, Qt.AspectRatioMode.KeepAspectRatio))
 
 def Capture(window):
+    global destPath
+    if not destPath:
+        destPath = QFileDialog.getExistingDirectory(window, "Select Save Directory")
+        if not destPath:
+            QMessageBox.critical(window, "Error", "No directory selected!")
+            return
+
     image_name = datetime.now().strftime('%d-%m-%Y %H-%M-%S')
-
-    if destPath.get() != '':
-        image_path = destPath.get()
-    else:
-        messagebox.showerror("ERROR", "NO DIRECTORY SELECTED TO STORE IMAGE!!")
-        return
-
-    imgName = image_path + '/' + image_name + ".jpg"
+    img_path = f"{destPath}/{image_name}.jpg"
     ret, frame = window.cap.read()
-
-    cv2.putText(frame, datetime.now().strftime('%d/%m/%Y %H:%M:%S'), (430, 460), cv2.FONT_HERSHEY_DUPLEX, 0.5, (0, 255, 255))
-    success = cv2.imwrite(imgName, frame)
-
-    saved_image = Image.open(imgName)
-    saved_image = ImageTk.PhotoImage(saved_image)
-
-    window.imageLabel.config(image=saved_image)
-    window.imageLabel.photo = saved_image
-
-    if success:
-        messagebox.showinfo("SUCCESS", "IMAGE CAPTURED AND SAVED IN " + imgName)
-
-led_pin = None
+    if ret:
+        cv2.putText(frame, datetime.now().strftime('%d/%m/%Y %H:%M:%S'),
+                    (430, 460), cv2.FONT_HERSHEY_DUPLEX, 0.5, (0, 255, 255))
+        cv2.imwrite(img_path, frame)
+        window.imageLabel.setPixmap(QPixmap(img_path).scaled(640, 480, Qt.AspectRatioMode.KeepAspectRatio))
+        QMessageBox.information(window, "Success", f"Image saved to {img_path}")
 
 def led_on():
-    global led_pin
+    global led_pin, board
     try:
-        if not led_pin:
+        if not board:
             board = Arduino('COM3')
+        if not led_pin:
             led_pin = board.get_pin('d:13:o')
         led_pin.write(1)
     except Exception as e:
-        messagebox.showerror("Connection Error", f"Failed to connect to Arduino: {str(e)}")
+        QMessageBox.critical(None, "Arduino Error", str(e))
 
 def led_off():
-    global led_pin
+    global led_pin, board
     try:
-        if not led_pin:
+        if not board:
             board = Arduino('COM3')
+        if not led_pin:
             led_pin = board.get_pin('d:13:o')
         led_pin.write(0)
     except Exception as e:
-        messagebox.showerror("Connection Error", f"Failed to connect to Arduino: {str(e)}")
+        QMessageBox.critical(None, "Arduino Error", str(e))
 
 def StopCAM(window):
+    window.timer.stop()
     window.cap.release()
-    window.CAMBTN.config(text="START CAMERA", command=lambda: StartCAM(window))
-    window.cameraLabel.config(text="OFF CAM", font=('Comic Sans MS', 70))
-
-def StartCAM(window):
-    window.cap = cv2.VideoCapture(0)
-    window.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-    window.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-    window.CAMBTN.config(text="STOP CAMERA", command=lambda: StopCAM(window))
-    window.cameraLabel.config(text="")
-    ShowFeed(window)
-
-def clear_window(window):
-    """Clear all widgets from the window."""
-    for widget in window.winfo_children():
-        widget.destroy()
+    window.cameraLabel.setText("OFF CAM")
 
 def BackToHome(window):
-    clear_window(window)
+    window.timer.stop()
     window.cap.release()
+    for i in reversed(range(window.layout().count())):
+        widget = window.layout().itemAt(i).widget()
+        if widget:
+            widget.setParent(None)
     Viettrix.HomeWidget(window)
-
-if __name__ == "__main__":
-    window = GUI.create_window()
-    createwidgets(window)
-    window.mainloop()
