@@ -16,15 +16,19 @@ try:
     it.start()
     time.sleep(2)  # Allow time for Arduino initialization
 
-    pul_pin = board.get_pin('d:10:o')
-    dir_pin = board.get_pin('d:8:o')
+    pul_pin_1 = board.get_pin('d:6:o')
+    pul_pin_2 = board.get_pin('d:7:o')
+    pul_pin_3 = board.get_pin('d:8:o')
+    pul_pin_4 = board.get_pin('d:9:o')
+    pul_pin_5 = board.get_pin('d:10:o')
+    pul_pin_6 = board.get_pin('d:11:o')
     pwmPin1 = board.get_pin('d:3:p')
     pwmPin2 = board.get_pin('d:5:p')
     print("[INFO] Arduino connected successfully")
 except Exception as e:
     print(f"[ERROR] Arduino not connected: {e}")
     board = None
-    pul_pin = dir_pin = pwmPin1 = pwmPin2 = None
+    pul_pin_1 = pul_pin_2 = pul_pin_3 = pul_pin_4 = pul_pin_5 = pul_pin_6 = pwmPin1 = pwmPin2 = None
 
 # Camera Setup
 try:
@@ -58,7 +62,7 @@ def continuous_move(direction):
     print(f"[DEBUG] Exiting continuous movement loop for: {direction}")
 
 def stepper_motor_control(direction):
-    if not pul_pin or not dir_pin:
+    if not pul_pin_1 or not pul_pin_2 or not pul_pin_3 or not pul_pin_4 or not pul_pin_5 or not pul_pin_6:
         print("[WARNING] Arduino pins not initialized; skipping motor control")
         return
 
