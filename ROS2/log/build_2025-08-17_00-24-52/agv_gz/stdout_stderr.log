@@ -1,0 +1,12 @@
+running egg_info
+writing ../../build/agv_gz/agv_gz.egg-info/PKG-INFO
+writing dependency_links to ../../build/agv_gz/agv_gz.egg-info/dependency_links.txt
+writing requirements to ../../build/agv_gz/agv_gz.egg-info/requires.txt
+writing top-level names to ../../build/agv_gz/agv_gz.egg-info/top_level.txt
+reading manifest file '../../build/agv_gz/agv_gz.egg-info/SOURCES.txt'
+writing manifest file '../../build/agv_gz/agv_gz.egg-info/SOURCES.txt'
+running build
+running install
+running install_data
+copying package.xml -> /home/silvergaster/AGV/install/agv_gz/share/agv_gz
+error: can't copy 'urdf/*.urdf': doesn't exist or not a regular file

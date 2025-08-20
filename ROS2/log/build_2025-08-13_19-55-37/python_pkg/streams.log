@@ -1,0 +1,20 @@
+[1.212s] Invoking command in '/home/silvergaster/AGV/src/python_pkg': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/silvergaster/AGV/build/python_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/python_pkg build --build-base /home/silvergaster/AGV/build/python_pkg/build install --record /home/silvergaster/AGV/build/python_pkg/install.log --single-version-externally-managed install_data
+[1.598s] running egg_info
+[1.632s] writing ../../build/python_pkg/python_pkg.egg-info/PKG-INFO
+[1.632s] writing dependency_links to ../../build/python_pkg/python_pkg.egg-info/dependency_links.txt
+[1.632s] writing requirements to ../../build/python_pkg/python_pkg.egg-info/requires.txt
+[1.632s] writing top-level names to ../../build/python_pkg/python_pkg.egg-info/top_level.txt
+[1.696s] reading manifest file '../../build/python_pkg/python_pkg.egg-info/SOURCES.txt'
+[1.697s] writing manifest file '../../build/python_pkg/python_pkg.egg-info/SOURCES.txt'
+[1.698s] running build
+[1.698s] running build_py
+[1.698s] running install
+[1.706s] running install_lib
+[1.738s] running install_data
+[1.739s] copying launch/test.launch.py -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/launch
+[1.739s] running install_egg_info
+[1.772s] removing '/home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/python_pkg-0.0.0-py3.12.egg-info' (and everything under it)
+[1.772s] Copying ../../build/python_pkg/python_pkg.egg-info to /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/python_pkg-0.0.0-py3.12.egg-info
+[1.773s] running install_scripts
+[1.965s] writing list of installed files to '/home/silvergaster/AGV/build/python_pkg/install.log'
+[2.005s] Invoked command in '/home/silvergaster/AGV/src/python_pkg' returned '0': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/silvergaster/AGV/build/python_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/python_pkg build --build-base /home/silvergaster/AGV/build/python_pkg/build install --record /home/silvergaster/AGV/build/python_pkg/install.log --single-version-externally-managed install_data

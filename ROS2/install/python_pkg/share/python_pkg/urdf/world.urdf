@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot name="line_world">
+
+  <!-- Ground plane -->
+  <link name="ground">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="5 5 0.01"/> <!-- 5m x 5m flat plane -->
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="5 5 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <!-- Line: 26mm wide black stripe -->
+  <link name="line">
+    <visual>
+      <origin xyz="0 0.0 0.0051" rpy="0 0 0"/> <!-- Slightly above the ground -->
+      <geometry>
+        <box size="5 0.026 0.001"/> <!-- Length 5m, Width 26mm, Thin -->
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0.0 0.0051" rpy="0 0 0"/>
+      <geometry>
+        <box size="5 0.026 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <!-- Fix the line to the ground -->
+  <joint name="line_to_ground" type="fixed">
+    <parent link="ground"/>
+    <child link="line"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>

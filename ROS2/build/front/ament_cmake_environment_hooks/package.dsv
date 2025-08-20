@@ -1,0 +1,4 @@
+source;share/front/local_setup.bash
+source;share/front/local_setup.dsv
+source;share/front/local_setup.sh
+source;share/front/local_setup.zsh

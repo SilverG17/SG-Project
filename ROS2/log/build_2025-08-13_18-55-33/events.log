@@ -1,0 +1,115 @@
+[0.000000] (-) TimerEvent: {}
+[0.000948] (-) JobUnselected: {'identifier': 'front'}
+[0.001049] (python_pkg) JobQueued: {'identifier': 'python_pkg', 'dependencies': OrderedDict()}
+[0.001372] (python_pkg) JobStarted: {'identifier': 'python_pkg'}
+[0.099739] (-) TimerEvent: {}
+[0.200111] (-) TimerEvent: {}
+[0.301083] (-) TimerEvent: {}
+[0.401419] (-) TimerEvent: {}
+[0.501745] (-) TimerEvent: {}
+[0.602061] (-) TimerEvent: {}
+[0.704352] (-) TimerEvent: {}
+[0.804660] (-) TimerEvent: {}
+[0.905108] (-) TimerEvent: {}
+[1.005414] (-) TimerEvent: {}
+[1.105702] (-) TimerEvent: {}
+[1.206434] (-) TimerEvent: {}
+[1.306755] (-) TimerEvent: {}
+[1.408301] (-) TimerEvent: {}
+[1.511074] (-) TimerEvent: {}
+[1.611419] (-) TimerEvent: {}
+[1.711777] (-) TimerEvent: {}
+[1.767639] (python_pkg) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/python_pkg', 'build', '--build-base', '/home/silvergaster/AGV/build/python_pkg/build', 'install', '--record', '/home/silvergaster/AGV/build/python_pkg/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/silvergaster/AGV/src/python_pkg', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'XDG_ACTIVATION_TOKEN': 'gnome-shell/Terminator/2713-2-silvergaster-E7240_TIME2168148', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'CONDA_PROMPT_MODIFIER': '(base)', 'USER': 'silvergaster', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/silvergaster', 'CONDA_SHLVL': '1', 'OLDPWD': '/home/silvergaster', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2458', 'SYSTEMD_EXEC_PID': '2713', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '10746', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/silvergaster/AGV/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'silvergaster', 'IGN_GAZEBO_MODEL_PATH': '/opt/ros/jazzy/share', 'JOURNAL_STREAM': '9:20026', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'silvergaster', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': '/opt/ros/jazzy/share/:/opt/ros/jazzy/share', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/home/silvergaster/miniconda3/bin:/home/silvergaster/miniconda3/condabin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/silvergaster/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/silvergaster-E7240:@/tmp/.ICE-unix/2677,unix/silvergaster-E7240:/tmp/.ICE-unix/2677', 'INVOCATION_ID': 'c9f7da28ac6b426d81e34cbfdfefffc1', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.CB41A3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/silvergaster/AGV/install/python_pkg:/home/silvergaster/AGV/install/front:/home/silvergaster/AGV/install/Front:/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/silvergaster/miniconda3/bin/python', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:d1894b70-5773-4a32-b6b4-fdea6f790b8f', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', 'CONDA_DEFAULT_ENV': 'base', 'GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/silvergaster/AGV/build/python_pkg', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/silvergaster/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/home/silvergaster/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/silvergaster/AGV/build/python_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages:/home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'CONDA_PREFIX': '/home/silvergaster/miniconda3', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/silvergaster/AGV/install/front:/home/silvergaster/AGV/install/Front:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[1.811896] (-) TimerEvent: {}
+[1.912137] (-) TimerEvent: {}
+[2.012389] (-) TimerEvent: {}
+[2.112640] (-) TimerEvent: {}
+[2.134650] (python_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[2.135170] (python_pkg) StdoutLine: {'line': b'creating ../../build/python_pkg/python_pkg.egg-info\n'}
+[2.163808] (python_pkg) StdoutLine: {'line': b'writing ../../build/python_pkg/python_pkg.egg-info/PKG-INFO\n'}
+[2.164214] (python_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/python_pkg/python_pkg.egg-info/dependency_links.txt\n'}
+[2.164544] (python_pkg) StdoutLine: {'line': b'writing requirements to ../../build/python_pkg/python_pkg.egg-info/requires.txt\n'}
+[2.164790] (python_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/python_pkg/python_pkg.egg-info/top_level.txt\n'}
+[2.165008] (python_pkg) StdoutLine: {'line': b"writing manifest file '../../build/python_pkg/python_pkg.egg-info/SOURCES.txt'\n"}
+[2.212758] (-) TimerEvent: {}
+[2.230206] (python_pkg) StdoutLine: {'line': b"reading manifest file '../../build/python_pkg/python_pkg.egg-info/SOURCES.txt'\n"}
+[2.231326] (python_pkg) StdoutLine: {'line': b"writing manifest file '../../build/python_pkg/python_pkg.egg-info/SOURCES.txt'\n"}
+[2.231652] (python_pkg) StdoutLine: {'line': b'running build\n'}
+[2.231825] (python_pkg) StdoutLine: {'line': b'running build_py\n'}
+[2.232111] (python_pkg) StdoutLine: {'line': b'creating /home/silvergaster/AGV/build/python_pkg/build\n'}
+[2.232377] (python_pkg) StdoutLine: {'line': b'creating /home/silvergaster/AGV/build/python_pkg/build/lib\n'}
+[2.232565] (python_pkg) StdoutLine: {'line': b'creating /home/silvergaster/AGV/build/python_pkg/build/lib/urdf\n'}
+[2.232770] (python_pkg) StdoutLine: {'line': b'copying urdf/__init__.py -> /home/silvergaster/AGV/build/python_pkg/build/lib/urdf\n'}
+[2.232973] (python_pkg) StdoutLine: {'line': b'creating /home/silvergaster/AGV/build/python_pkg/build/lib/python_pkg\n'}
+[2.233161] (python_pkg) StdoutLine: {'line': b'copying python_pkg/__init__.py -> /home/silvergaster/AGV/build/python_pkg/build/lib/python_pkg\n'}
+[2.233407] (python_pkg) StdoutLine: {'line': b'running install\n'}
+[2.241252] (python_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[2.272197] (python_pkg) StdoutLine: {'line': b'creating /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/urdf\n'}
+[2.272487] (python_pkg) StdoutLine: {'line': b'copying /home/silvergaster/AGV/build/python_pkg/build/lib/urdf/__init__.py -> /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/urdf\n'}
+[2.272728] (python_pkg) StdoutLine: {'line': b'creating /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/python_pkg\n'}
+[2.273007] (python_pkg) StdoutLine: {'line': b'copying /home/silvergaster/AGV/build/python_pkg/build/lib/python_pkg/__init__.py -> /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/python_pkg\n'}
+[2.273604] (python_pkg) StdoutLine: {'line': b'byte-compiling /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/urdf/__init__.py to __init__.cpython-312.pyc\n'}
+[2.273969] (python_pkg) StdoutLine: {'line': b'byte-compiling /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/python_pkg/__init__.py to __init__.cpython-312.pyc\n'}
+[2.274299] (python_pkg) StdoutLine: {'line': b'running install_data\n'}
+[2.274543] (python_pkg) StdoutLine: {'line': b'copying package.xml -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg\n'}
+[2.274826] (python_pkg) StdoutLine: {'line': b'creating /home/silvergaster/AGV/install/python_pkg/share/python_pkg/launch\n'}
+[2.275078] (python_pkg) StdoutLine: {'line': b'copying launch/Line_gazebo.launch.py -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/launch\n'}
+[2.275290] (python_pkg) StdoutLine: {'line': b'copying launch/test.launch.py -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/launch\n'}
+[2.275493] (python_pkg) StdoutLine: {'line': b'copying launch/ign_gazebo.launch.py -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/launch\n'}
+[2.275772] (python_pkg) StdoutLine: {'line': b'creating /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf\n'}
+[2.275892] (python_pkg) StdoutLine: {'line': b'copying urdf/world.urdf -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf\n'}
+[2.276236] (python_pkg) StdoutLine: {'line': b'copying urdf/test.urdf -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf\n'}
+[2.277004] (python_pkg) StdoutLine: {'line': b'creating /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.277308] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame008_clgmzd.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.277649] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_component1_03rzj7.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.278923] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame005_anuq6v.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.279292] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame013_y6fkrf.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.279671] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_component008_piwc6e.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.281062] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_component005_ixwyeq.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.282525] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_component5_usjylo.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.283479] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame002_npb5ar.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.283847] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_simplefrontwheelsteering4v4_8kertd.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.284949] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_component2_zt7ehm.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.285435] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_component3_keuldv.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.287505] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_component010_xuasif.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.288604] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame010_ckf0cr.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.288969] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_component4_kfvl9w.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.290223] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_base_link_mxkusq.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.290512] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame003_301pnj.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.290960] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_simplefrontwheelsteering2v3_a7kkrv.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.292404] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame012_v4ynyz.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.292912] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_newfrontwheelv004_hji4ec.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.301818] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame006_lbnbg2.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.303020] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_newfrontwheelv3_qklj1m.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.311757] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame009_fvn2bw.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.312229] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame011_4fykzd.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.312698] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame015_bcy07r.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.312810] (-) TimerEvent: {}
+[2.313133] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_simplefrontwheelsteering4_rollingv1_krygwb.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.317570] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame_ytd0yn.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.318000] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_simplefrontwheelsteering4v005_esg1w7.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.321367] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame004_cjnhmb.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.321734] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame014_zslmgk.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.322099] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_component013_xkbtpb.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.322690] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame017_gu3wnv.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.324125] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_component011_x6lyi6.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.325854] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame007_kbdkwf.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.326239] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame001_6e0oc1.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.326631] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_simplefrontwheelsteering2_rollingv1_eoyyh7.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.330246] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_simplefrontwheelsteering2v004_gaogxh.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.333038] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_simplerearwheel_hfbdem.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.336575] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_component009_1m8g3o.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.338084] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_simplerearwheel001_b0zbxk.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.341482] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_component007_kjdcuc.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.342131] (python_pkg) StdoutLine: {'line': b'copying urdf/meshes/assem2_frame016_i7txbl.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes\n'}
+[2.342835] (python_pkg) StdoutLine: {'line': b'copying resource/python_pkg -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg\n'}
+[2.343043] (python_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.379369] (python_pkg) StdoutLine: {'line': b'Copying ../../build/python_pkg/python_pkg.egg-info to /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/python_pkg-0.0.0-py3.12.egg-info\n'}
+[2.380227] (python_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[2.412941] (-) TimerEvent: {}
+[2.513306] (-) TimerEvent: {}
+[2.574563] (python_pkg) StdoutLine: {'line': b"writing list of installed files to '/home/silvergaster/AGV/build/python_pkg/install.log'\n"}
+[2.613427] (-) TimerEvent: {}
+[2.634206] (python_pkg) CommandEnded: {'returncode': 0}
+[2.644210] (python_pkg) JobEnded: {'identifier': 'python_pkg', 'rc': 0}
+[2.645449] (-) EventReactorShutdown: {}

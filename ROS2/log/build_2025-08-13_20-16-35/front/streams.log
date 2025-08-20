@@ -1,0 +1,41 @@
+[0.037s] Invoking command in '/home/silvergaster/AGV/build/front': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/silvergaster/AGV/install/python_pkg:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/silvergaster/AGV/build/front -- -j4 -l4
+[0.339s] Invoked command in '/home/silvergaster/AGV/build/front' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/silvergaster/AGV/install/python_pkg:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/silvergaster/AGV/build/front -- -j4 -l4
+[0.351s] Invoking command in '/home/silvergaster/AGV/build/front': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/silvergaster/AGV/install/python_pkg:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/silvergaster/AGV/build/front
+[0.362s] -- Install configuration: ""
+[0.363s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/launch
+[0.363s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/launch/gazebo.launch.py
+[0.363s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/launch/display.launch.py
+[0.363s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/launch/description.launch.py
+[0.363s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/meshes
+[0.364s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/meshes/assem1_simplefrontwheelsteering4v005_n0txft.dae
+[0.364s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/meshes/assem1_simplefrontwheelsteering2v004_0utofy.dae
+[0.364s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/meshes/assem1_base_link_kshh9p.dae
+[0.364s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/meshes/assem1_simplefrontwheelsteering4_rollingv1_lbo4yt.dae
+[0.364s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/meshes/assem1_simplefrontwheelsteering4v4_5dlltd.dae
+[0.365s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/meshes/assem1_simplefrontwheelsteering2_rollingv1_tf9b4o.dae
+[0.365s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/meshes/assem1_simplefrontwheelsteering2v3_vvsqon.dae
+[0.365s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/rviz
+[0.365s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/rviz/robot_description.rviz
+[0.365s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/urdf
+[0.366s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/urdf/Robot.urdf
+[0.366s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/urdf/Robot_sensors.urdf.xacro
+[0.366s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/urdf/Robot_wrapper.urdf.xacro
+[0.366s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/worlds
+[0.366s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/worlds/cars_and_trees.sdf
+[0.367s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/worlds/empty.sdf
+[0.367s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/ament_index/resource_index/package_run_dependencies/front
+[0.367s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/ament_index/resource_index/parent_prefix_path/front
+[0.367s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/environment/ament_prefix_path.sh
+[0.368s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/environment/ament_prefix_path.dsv
+[0.369s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/environment/path.sh
+[0.369s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/environment/path.dsv
+[0.369s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/local_setup.bash
+[0.369s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/local_setup.sh
+[0.370s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/local_setup.zsh
+[0.370s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/local_setup.dsv
+[0.370s] -- Installing: /home/silvergaster/AGV/install/front/share/front/package.dsv
+[0.371s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/ament_index/resource_index/packages/front
+[0.371s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/cmake/frontConfig.cmake
+[0.372s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/cmake/frontConfig-version.cmake
+[0.372s] -- Up-to-date: /home/silvergaster/AGV/install/front/share/front/package.xml
+[0.374s] Invoked command in '/home/silvergaster/AGV/build/front' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/silvergaster/AGV/install/python_pkg:/opt/ros/jazzy CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/silvergaster/AGV/build/front

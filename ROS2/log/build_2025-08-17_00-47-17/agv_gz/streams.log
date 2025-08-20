@@ -1,0 +1,18 @@
+[1.734s] Invoking command in '/home/silvergaster/AGV/src/agv_gz': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/silvergaster/AGV/build/agv_gz/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/silvergaster/AGV/install/agv_gz/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/agv_gz build --build-base /home/silvergaster/AGV/build/agv_gz/build install --record /home/silvergaster/AGV/build/agv_gz/install.log --single-version-externally-managed install_data
+[2.171s] running egg_info
+[2.206s] writing ../../build/agv_gz/agv_gz.egg-info/PKG-INFO
+[2.207s] writing dependency_links to ../../build/agv_gz/agv_gz.egg-info/dependency_links.txt
+[2.207s] writing requirements to ../../build/agv_gz/agv_gz.egg-info/requires.txt
+[2.207s] writing top-level names to ../../build/agv_gz/agv_gz.egg-info/top_level.txt
+[2.244s] reading manifest file '../../build/agv_gz/agv_gz.egg-info/SOURCES.txt'
+[2.245s] writing manifest file '../../build/agv_gz/agv_gz.egg-info/SOURCES.txt'
+[2.246s] running build
+[2.246s] running install
+[2.254s] running install_data
+[2.256s] copying urdf/agv.urdf -> /home/silvergaster/AGV/install/agv_gz/share/agv_gz/urdf
+[2.256s] running install_egg_info
+[2.330s] removing '/home/silvergaster/AGV/install/agv_gz/lib/python3.12/site-packages/agv_gz-0.0.0-py3.12.egg-info' (and everything under it)
+[2.330s] Copying ../../build/agv_gz/agv_gz.egg-info to /home/silvergaster/AGV/install/agv_gz/lib/python3.12/site-packages/agv_gz-0.0.0-py3.12.egg-info
+[2.331s] running install_scripts
+[2.566s] writing list of installed files to '/home/silvergaster/AGV/build/agv_gz/install.log'
+[2.612s] Invoked command in '/home/silvergaster/AGV/src/agv_gz' returned '0': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/silvergaster/AGV/build/agv_gz/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/silvergaster/AGV/install/agv_gz/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/agv_gz build --build-base /home/silvergaster/AGV/build/agv_gz/build install --record /home/silvergaster/AGV/build/agv_gz/install.log --single-version-externally-managed install_data

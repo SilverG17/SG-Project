@@ -1,0 +1,26 @@
+[1.580s] Invoking command in '/home/silvergaster/AGV/src/agv_gz': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/silvergaster/AGV/build/agv_gz/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/silvergaster/AGV/install/agv_gz/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/agv_gz build --build-base /home/silvergaster/AGV/build/agv_gz/build install --record /home/silvergaster/AGV/build/agv_gz/install.log --single-version-externally-managed install_data
+[1.988s] running egg_info
+[2.025s] writing ../../build/agv_gz/agv_gz.egg-info/PKG-INFO
+[2.026s] writing dependency_links to ../../build/agv_gz/agv_gz.egg-info/dependency_links.txt
+[2.026s] writing requirements to ../../build/agv_gz/agv_gz.egg-info/requires.txt
+[2.026s] writing top-level names to ../../build/agv_gz/agv_gz.egg-info/top_level.txt
+[2.060s] reading manifest file '../../build/agv_gz/agv_gz.egg-info/SOURCES.txt'
+[2.061s] writing manifest file '../../build/agv_gz/agv_gz.egg-info/SOURCES.txt'
+[2.062s] running build
+[2.062s] running install
+[2.070s] running install_data
+[2.070s] copying launch/test.launch.py -> /home/silvergaster/AGV/install/agv_gz/share/agv_gz/launch
+[2.070s] copying urdf/model.sdf -> /home/silvergaster/AGV/install/agv_gz/share/agv_gz/urdf
+[2.071s] creating /home/silvergaster/AGV/install/agv_gz/share/agv_gz/urdf/meshes
+[2.071s] copying urdf/meshes/base_link.dae -> /home/silvergaster/AGV/install/agv_gz/share/agv_gz/urdf/meshes
+[2.071s] copying urdf/meshes/wheel.dae -> /home/silvergaster/AGV/install/agv_gz/share/agv_gz/urdf/meshes
+[2.073s] copying urdf/meshes/sensor_rack_support_lowres.dae -> /home/silvergaster/AGV/install/agv_gz/share/agv_gz/urdf/meshes
+[2.076s] copying urdf/meshes/sensor_rack_lowres_shallow_laser.dae -> /home/silvergaster/AGV/install/agv_gz/share/agv_gz/urdf/meshes
+[2.081s] copying urdf/meshes/bumper.dae -> /home/silvergaster/AGV/install/agv_gz/share/agv_gz/urdf/meshes
+[2.081s] copying urdf/meshes/top_chassis.dae -> /home/silvergaster/AGV/install/agv_gz/share/agv_gz/urdf/meshes
+[2.082s] running install_egg_info
+[2.152s] removing '/home/silvergaster/AGV/install/agv_gz/lib/python3.12/site-packages/agv_gz-0.0.0-py3.12.egg-info' (and everything under it)
+[2.153s] Copying ../../build/agv_gz/agv_gz.egg-info to /home/silvergaster/AGV/install/agv_gz/lib/python3.12/site-packages/agv_gz-0.0.0-py3.12.egg-info
+[2.154s] running install_scripts
+[2.371s] writing list of installed files to '/home/silvergaster/AGV/build/agv_gz/install.log'
+[2.416s] Invoked command in '/home/silvergaster/AGV/src/agv_gz' returned '0': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/silvergaster/AGV/build/agv_gz/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/silvergaster/AGV/install/agv_gz/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/agv_gz build --build-base /home/silvergaster/AGV/build/agv_gz/build install --record /home/silvergaster/AGV/build/agv_gz/install.log --single-version-externally-managed install_data

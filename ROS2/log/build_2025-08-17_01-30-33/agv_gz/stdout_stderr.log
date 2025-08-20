@@ -1,0 +1,16 @@
+running egg_info
+writing ../../build/agv_gz/agv_gz.egg-info/PKG-INFO
+writing dependency_links to ../../build/agv_gz/agv_gz.egg-info/dependency_links.txt
+writing requirements to ../../build/agv_gz/agv_gz.egg-info/requires.txt
+writing top-level names to ../../build/agv_gz/agv_gz.egg-info/top_level.txt
+reading manifest file '../../build/agv_gz/agv_gz.egg-info/SOURCES.txt'
+writing manifest file '../../build/agv_gz/agv_gz.egg-info/SOURCES.txt'
+running build
+running install
+running install_data
+copying launch/test.launch.py -> /home/silvergaster/AGV/install/agv_gz/share/agv_gz/launch
+running install_egg_info
+removing '/home/silvergaster/AGV/install/agv_gz/lib/python3.12/site-packages/agv_gz-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/agv_gz/agv_gz.egg-info to /home/silvergaster/AGV/install/agv_gz/lib/python3.12/site-packages/agv_gz-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/home/silvergaster/AGV/build/agv_gz/install.log'

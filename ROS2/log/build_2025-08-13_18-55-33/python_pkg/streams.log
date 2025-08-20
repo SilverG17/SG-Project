@@ -1,0 +1,83 @@
+[1.769s] Invoking command in '/home/silvergaster/AGV/src/python_pkg': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/silvergaster/AGV/build/python_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/python_pkg build --build-base /home/silvergaster/AGV/build/python_pkg/build install --record /home/silvergaster/AGV/build/python_pkg/install.log --single-version-externally-managed install_data
+[2.133s] running egg_info
+[2.134s] creating ../../build/python_pkg/python_pkg.egg-info
+[2.163s] writing ../../build/python_pkg/python_pkg.egg-info/PKG-INFO
+[2.163s] writing dependency_links to ../../build/python_pkg/python_pkg.egg-info/dependency_links.txt
+[2.163s] writing requirements to ../../build/python_pkg/python_pkg.egg-info/requires.txt
+[2.164s] writing top-level names to ../../build/python_pkg/python_pkg.egg-info/top_level.txt
+[2.164s] writing manifest file '../../build/python_pkg/python_pkg.egg-info/SOURCES.txt'
+[2.229s] reading manifest file '../../build/python_pkg/python_pkg.egg-info/SOURCES.txt'
+[2.230s] writing manifest file '../../build/python_pkg/python_pkg.egg-info/SOURCES.txt'
+[2.230s] running build
+[2.231s] running build_py
+[2.231s] creating /home/silvergaster/AGV/build/python_pkg/build
+[2.231s] creating /home/silvergaster/AGV/build/python_pkg/build/lib
+[2.231s] creating /home/silvergaster/AGV/build/python_pkg/build/lib/urdf
+[2.232s] copying urdf/__init__.py -> /home/silvergaster/AGV/build/python_pkg/build/lib/urdf
+[2.232s] creating /home/silvergaster/AGV/build/python_pkg/build/lib/python_pkg
+[2.232s] copying python_pkg/__init__.py -> /home/silvergaster/AGV/build/python_pkg/build/lib/python_pkg
+[2.232s] running install
+[2.240s] running install_lib
+[2.271s] creating /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/urdf
+[2.271s] copying /home/silvergaster/AGV/build/python_pkg/build/lib/urdf/__init__.py -> /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/urdf
+[2.272s] creating /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/python_pkg
+[2.272s] copying /home/silvergaster/AGV/build/python_pkg/build/lib/python_pkg/__init__.py -> /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/python_pkg
+[2.272s] byte-compiling /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/urdf/__init__.py to __init__.cpython-312.pyc
+[2.273s] byte-compiling /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/python_pkg/__init__.py to __init__.cpython-312.pyc
+[2.273s] running install_data
+[2.273s] copying package.xml -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg
+[2.274s] creating /home/silvergaster/AGV/install/python_pkg/share/python_pkg/launch
+[2.274s] copying launch/Line_gazebo.launch.py -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/launch
+[2.274s] copying launch/test.launch.py -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/launch
+[2.274s] copying launch/ign_gazebo.launch.py -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/launch
+[2.274s] creating /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf
+[2.275s] copying urdf/world.urdf -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf
+[2.275s] copying urdf/test.urdf -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf
+[2.276s] creating /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.276s] copying urdf/meshes/assem2_frame008_clgmzd.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.276s] copying urdf/meshes/assem2_component1_03rzj7.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.278s] copying urdf/meshes/assem2_frame005_anuq6v.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.278s] copying urdf/meshes/assem2_frame013_y6fkrf.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.278s] copying urdf/meshes/assem2_component008_piwc6e.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.280s] copying urdf/meshes/assem2_component005_ixwyeq.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.281s] copying urdf/meshes/assem2_component5_usjylo.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.282s] copying urdf/meshes/assem2_frame002_npb5ar.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.283s] copying urdf/meshes/assem2_simplefrontwheelsteering4v4_8kertd.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.284s] copying urdf/meshes/assem2_component2_zt7ehm.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.284s] copying urdf/meshes/assem2_component3_keuldv.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.286s] copying urdf/meshes/assem2_component010_xuasif.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.287s] copying urdf/meshes/assem2_frame010_ckf0cr.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.288s] copying urdf/meshes/assem2_component4_kfvl9w.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.289s] copying urdf/meshes/assem2_base_link_mxkusq.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.289s] copying urdf/meshes/assem2_frame003_301pnj.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.290s] copying urdf/meshes/assem2_simplefrontwheelsteering2v3_a7kkrv.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.291s] copying urdf/meshes/assem2_frame012_v4ynyz.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.292s] copying urdf/meshes/assem2_newfrontwheelv004_hji4ec.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.301s] copying urdf/meshes/assem2_frame006_lbnbg2.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.302s] copying urdf/meshes/assem2_newfrontwheelv3_qklj1m.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.311s] copying urdf/meshes/assem2_frame009_fvn2bw.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.311s] copying urdf/meshes/assem2_frame011_4fykzd.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.311s] copying urdf/meshes/assem2_frame015_bcy07r.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.312s] copying urdf/meshes/assem2_simplefrontwheelsteering4_rollingv1_krygwb.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.316s] copying urdf/meshes/assem2_frame_ytd0yn.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.317s] copying urdf/meshes/assem2_simplefrontwheelsteering4v005_esg1w7.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.320s] copying urdf/meshes/assem2_frame004_cjnhmb.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.320s] copying urdf/meshes/assem2_frame014_zslmgk.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.321s] copying urdf/meshes/assem2_component013_xkbtpb.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.321s] copying urdf/meshes/assem2_frame017_gu3wnv.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.323s] copying urdf/meshes/assem2_component011_x6lyi6.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.325s] copying urdf/meshes/assem2_frame007_kbdkwf.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.325s] copying urdf/meshes/assem2_frame001_6e0oc1.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.325s] copying urdf/meshes/assem2_simplefrontwheelsteering2_rollingv1_eoyyh7.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.329s] copying urdf/meshes/assem2_simplefrontwheelsteering2v004_gaogxh.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.332s] copying urdf/meshes/assem2_simplerearwheel_hfbdem.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.335s] copying urdf/meshes/assem2_component009_1m8g3o.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.337s] copying urdf/meshes/assem2_simplerearwheel001_b0zbxk.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.340s] copying urdf/meshes/assem2_component007_kjdcuc.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.341s] copying urdf/meshes/assem2_frame016_i7txbl.dae -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg/urdf/meshes
+[2.342s] copying resource/python_pkg -> /home/silvergaster/AGV/install/python_pkg/share/python_pkg
+[2.342s] running install_egg_info
+[2.378s] Copying ../../build/python_pkg/python_pkg.egg-info to /home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages/python_pkg-0.0.0-py3.12.egg-info
+[2.379s] running install_scripts
+[2.573s] writing list of installed files to '/home/silvergaster/AGV/build/python_pkg/install.log'
+[2.633s] Invoked command in '/home/silvergaster/AGV/src/python_pkg' returned '0': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/silvergaster/AGV/build/python_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/silvergaster/AGV/install/python_pkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/python_pkg build --build-base /home/silvergaster/AGV/build/python_pkg/build install --record /home/silvergaster/AGV/build/python_pkg/install.log --single-version-externally-managed install_data

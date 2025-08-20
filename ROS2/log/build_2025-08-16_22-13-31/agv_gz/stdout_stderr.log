@@ -1,0 +1,21 @@
+running egg_info
+creating ../../build/agv_gz/agv_gz.egg-info
+writing ../../build/agv_gz/agv_gz.egg-info/PKG-INFO
+writing dependency_links to ../../build/agv_gz/agv_gz.egg-info/dependency_links.txt
+writing requirements to ../../build/agv_gz/agv_gz.egg-info/requires.txt
+writing top-level names to ../../build/agv_gz/agv_gz.egg-info/top_level.txt
+writing manifest file '../../build/agv_gz/agv_gz.egg-info/SOURCES.txt'
+reading manifest file '../../build/agv_gz/agv_gz.egg-info/SOURCES.txt'
+writing manifest file '../../build/agv_gz/agv_gz.egg-info/SOURCES.txt'
+running build
+running install
+running install_data
+creating /home/silvergaster/AGV/install/agv_gz/share/ament_index
+creating /home/silvergaster/AGV/install/agv_gz/share/ament_index/resource_index
+creating /home/silvergaster/AGV/install/agv_gz/share/ament_index/resource_index/packages
+copying resource/agv_gz -> /home/silvergaster/AGV/install/agv_gz/share/ament_index/resource_index/packages
+copying package.xml -> /home/silvergaster/AGV/install/agv_gz/share/agv_gz
+running install_egg_info
+Copying ../../build/agv_gz/agv_gz.egg-info to /home/silvergaster/AGV/install/agv_gz/lib/python3.12/site-packages/agv_gz-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/home/silvergaster/AGV/build/agv_gz/install.log'
